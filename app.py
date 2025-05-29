@@ -11,11 +11,40 @@ app = App(token=os.getenv("BOT_TOKEN"), signing_secret=os.getenv("SIGNING_SECRET
 handler = SlackRequestHandler(app)
 client = WebClient(token=os.getenv("BOT_TOKEN"))
 
-@app.command("/greet")
+@app.command("/game")
 def greet(ack, command):
     ack()
     channel_id = command['channel_id']
-    client.chat_postMessage(channel=channel_id, text="*would you like to play a game?*")
+    user_id = command['user_id']
+    response = client.chat_postMessage(channel=channel_id, text=f"*would you like to play a game, <@{user_id}>?*")
+    thread_ts = response["ts"]
+    client.chat_postMessage(
+        channel=channel_id,
+        blocks=[
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "choose a game to play, if you dare..."
+                }
+            },
+            {
+                "type": "actions",
+                "elements": [
+                    {
+                        "type": "button",
+                        "text": {
+                            "type": "plain_text",
+                            "text": "Wordle",
+                            "emoji": True
+                        },
+                        "value": "wordle"
+                    }
+                ]
+            }
+        ],
+        thread_ts=thread_ts
+    )
 
 @flask_app.route("/slack/events", methods=["POST"])
 def slack_events():
