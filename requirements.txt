@@ -1,0 +1,6 @@
+flask
+requests
+sqlalchemy
+pandas
+numpy
+pygame
