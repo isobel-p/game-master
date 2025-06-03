@@ -1,6 +1,4 @@
-flask
 requests
-sqlalchemy
-pandas
-numpy
-pygame
+slack_sdk
+flask
+dotenv
