@@ -2,6 +2,7 @@
 > Slack bot of games, master of all. A multiplayer game bot made for Slack, powered by Python.
 
 ![The GameMaster logo: Wizard Orpheus casting lightning.](game-master.png)
+
 *The GameMaster logo: Wizard Orpheus casting lightning.*
 
 ## Features
