@@ -22,13 +22,13 @@ This Slack bot is a WIP - many more games are coming!
 To host GameMaster locally or on a server, follow these steps:
 1. **Clone the repository**
     ```bash
-    git clone https://github.com/your-username/game-master.git
+    git clone https://github.com/isobel-p/game-master.git
     cd game-master
     ```
 2. **Set up a Python environment**
     ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    python -m venv .venv
+    source /.venv/bin/activate  # On Windows: \.venv\Scripts\activate
     ```
 3. **Install dependencies**
     ```bash
@@ -42,7 +42,7 @@ To host GameMaster locally or on a server, follow these steps:
     ```
 5. **Run the bot**
     ```bash
-    python main.py
+    python app.py
     ```
 6. **Add the bot to your Slack workspace**
 
